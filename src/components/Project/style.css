@@ -1,0 +1,6 @@
+.test {
+  opacity: 0.85;
+}
+.test:hover {
+  opacity: 0.2;
+}
