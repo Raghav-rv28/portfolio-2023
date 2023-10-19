@@ -68,7 +68,6 @@ export default function LayoutCards({}: Props) {
                 ml: "5%",
                 width: "90%",
                 height: 240,
-                border: 1,
                 objectFit: "cover",
               }}
             >

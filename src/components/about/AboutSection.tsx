@@ -7,6 +7,8 @@ import Paper from "@mui/material/Paper";
 import Image from "next/image";
 import curvedArrow from "../../../public/curved stroke.png";
 import { motion } from "framer-motion";
+import { Button, Link } from "@mui/material";
+import { GifBox } from "@mui/icons-material";
 type Props = {};
 
 export default function AboutSection({}: Props) {
@@ -68,14 +70,7 @@ export default function AboutSection({}: Props) {
                 minHeight: "600px",
               }}
             >
-              <Box
-                height="600px"
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
+              <Stack height="600px" justifyContent="center" alignItems="center">
                 <Typography
                   fontSize="1.5rem"
                   fontFamily={"sans-serif"}
@@ -92,7 +87,14 @@ export default function AboutSection({}: Props) {
                   existing applications to use serverless and Microservices
                   architecture.
                 </Typography>
-              </Box>
+                <Link
+                  target="_blank"
+                  href="https://raghav-portfolio-media.s3.amazonaws.com/Resume.pdf"
+                  underline="none"
+                >
+                  <Button variant="contained"> Resume</Button>
+                </Link>
+              </Stack>
             </Grid>
             <Grid
               item

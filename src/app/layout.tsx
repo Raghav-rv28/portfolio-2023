@@ -1,6 +1,5 @@
 import * as React from "react";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
-
 export const metadata = {
   title: "Raghav's Portfolio",
 };

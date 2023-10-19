@@ -4,10 +4,11 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { motion } from "framer-motion";
+import Box from "@mui/material/Box";
 
-type Props = {};
+type Props = { toAbout: any };
 
-export default function AnimatedText({}: Props) {
+export default function AnimatedText({ toAbout }: Props) {
   return (
     <motion.div>
       <Stack
@@ -36,9 +37,14 @@ export default function AnimatedText({}: Props) {
           Software Development Engineer with expertise in developing Full-Stack
           & Cloud solutions.
         </Typography>
-        {/* <Button sx={{ maxWidth: 150, m: "1rem", ml: "2rem", fontSize: 24 }}>
-          About Me
-        </Button> */}
+        <Box width="100%" justifyContent="center" display="flex">
+          <Button
+            onClick={toAbout}
+            sx={{ maxWidth: 150, m: "1rem", ml: "2rem", fontSize: 24 }}
+          >
+            About Me
+          </Button>
+        </Box>
       </Stack>
     </motion.div>
   );
