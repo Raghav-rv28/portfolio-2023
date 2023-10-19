@@ -5,6 +5,7 @@ import stroke from "../../../public/test.png";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
 import LayoutCards from "./LayoutCards";
+import { motion } from "framer-motion";
 type Props = {};
 
 export default function ProjectSection({}: Props) {
@@ -25,10 +26,19 @@ export default function ProjectSection({}: Props) {
         }}
       >
         <Box
+          component={motion.div}
+          initial={{ scale: 0 }}
+          whileInView={{ rotate: 80, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            duration: 3,
+            damping: 20,
+          }}
           sx={{
             maxWidth: 320,
             position: "relative",
-            transform: "rotate(80deg)",
             top: -50,
             left: temp / 2,
           }}

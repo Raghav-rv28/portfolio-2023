@@ -6,28 +6,10 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Image from "next/image";
 import curvedArrow from "../../../public/curved stroke.png";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 type Props = {};
-const curvedVariants = {
-  visible: {
-    opacity: 1,
-    scale: 2,
-    rotate: 30,
-    translateY: 150,
-    transition: { duration: 1 },
-  },
-  hidden: { opacity: 0, scale: 0 },
-};
+
 export default function AboutSection({}: Props) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  React.useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-  console.log(inView);
   return (
     <div>
       <Paper
@@ -39,20 +21,21 @@ export default function AboutSection({}: Props) {
         }}
       >
         <Box
-          ref={ref}
+          width={150}
           component={motion.div}
           initial={{ scale: 0 }}
-          variants={curvedVariants}
-          animate={{ rotate: 30, scale: 1, translateY: 150 }}
+          whileInView={{ rotate: 30, scale: 1, translateY: -50 }}
+          viewport={{ once: true }}
           transition={{
             type: "spring",
             stiffness: 260,
+            duration: 3,
             damping: 20,
           }}
         >
           <Image
-            width={300}
-            height={300}
+            width={150}
+            height={150}
             alt="curved arrow"
             src={curvedArrow}
           />
@@ -93,7 +76,13 @@ export default function AboutSection({}: Props) {
                   alignItems: "center",
                 }}
               >
-                <Typography fontSize="1.5rem" width="80%" color="#FFF8C9">
+                <Typography
+                  fontSize="1.5rem"
+                  fontFamily={"sans-serif"}
+                  fontWeight="700"
+                  width="80%"
+                  color="#FFF8C9"
+                >
                   Results-driven Full-Stack Software Engineer with a Bachelor of
                   Science in Computer Science from Lakehead University, 2+ years
                   of agile development experience, proficiency in React, Node,
@@ -122,6 +111,9 @@ export default function AboutSection({}: Props) {
                 spacing={2}
                 sx={{ width: "100%", minHeight: "600px" }}
               >
+                <Typography component="h1" fontSize={"2rem"}>
+                  EXPERIENCE
+                </Typography>
                 <Stack
                   direction="column"
                   justifyContent="flex-start"
@@ -134,11 +126,19 @@ export default function AboutSection({}: Props) {
                     width: "90%",
                   }}
                 >
-                  <Typography fontSize="1.2rem" color="#FFF8C9" width="80%">
+                  <Typography
+                    fontSize="1.2rem"
+                    color="#FFF8C9"
+                    textAlign={"center"}
+                  >
                     Full Stack Cloud Engineer | Resource Software International
                     Ltd. (RSI).
                   </Typography>
-                  <Typography fontSize="0.8rem" color="#FFF8C9" width="80%">
+                  <Typography
+                    fontSize="0.8rem"
+                    color="#FFF8C9"
+                    textAlign={"center"}
+                  >
                     May 2022 - Aug 2023 · 1 yr 4 mos
                   </Typography>
                 </Stack>
@@ -154,10 +154,18 @@ export default function AboutSection({}: Props) {
                     width: "90%",
                   }}
                 >
-                  <Typography fontSize="1.2rem" color="#FFF8C9" width="80%">
+                  <Typography
+                    fontSize="1.2rem"
+                    color="#FFF8C9"
+                    textAlign={"center"}
+                  >
                     Junior Web Developer | Bangaree Infotech Solutions
                   </Typography>
-                  <Typography fontSize="0.8rem" color="#FFF8C9" width="80%">
+                  <Typography
+                    fontSize="0.8rem"
+                    color="#FFF8C9"
+                    textAlign={"center"}
+                  >
                     Jan 2020 - Nov 2021 · 1 yr 11 mos
                   </Typography>
                 </Stack>

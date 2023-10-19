@@ -4,6 +4,8 @@ import Container from "@mui/material/Container";
 import AnimatedText from "@/components/Home/AnimatedText";
 import AboutSection from "@/components/about/AboutSection";
 import ProjectSection from "@/components/Project/ProjectSection";
+import Button from "@mui/material/Button";
+import ContactSection from "@/components/Contact/ContactSection";
 
 export default function HomePage() {
   return (
@@ -11,6 +13,7 @@ export default function HomePage() {
       <AnimatedText />
       <AboutSection />
       <ProjectSection />
+      <ContactSection />
     </Container>
   );
 }
