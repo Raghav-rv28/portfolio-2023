@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "claps": 15,
+      "author": "ecd9d0c0afb9",
+      "id": "639b98322151",
+      "title": "Creating Cloud Batch Job using AWS ECS Fargate, Eventbridge Scheduler & Terraform",
+      "subtitle": "Creating, deploying, and maintaining a micro service is troublesome on loud and especially so when doing it multiple times over different…",
+      "tags": ["aws", "terraform", "devops", "cloud-computing"],
+      "topics": ["programming"],
+      "voters": 2,
+      "word_count": 797,
+      "responses_count": 0,
+      "reading_time": 3.557547169811321,
+      "image_url": "https://miro.medium.com/1*nZCBHLCi9K6ntbPbTQbcXA.png",
+      "url": "https://medium.com/@speedgod/creating-cloud-batch-job-using-aws-ecs-fargate-eventbridge-scheduler-terraform-639b98322151",
+      "published_at": "2023-10-18 22:54:35",
+      "last_modified_at": "2023-10-18 22:54:35",
+      "publication_id": "*Self-Published*",
+      "lang": "en",
+      "is_series": false,
+      "is_locked": false
+    }
+  ]
+}
