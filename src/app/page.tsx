@@ -15,6 +15,7 @@ export default function HomePage() {
   const toAbout = React.useCallback(() => {
     AboutRef.current?.scrollIntoView();
   }, []);
+
   return (
     <Container sx={{ backgroundColor: "#141E46" }} maxWidth="xl" disableGutters>
       {AboutRef.current !== undefined && <AnimatedText toAbout={toAbout} />}

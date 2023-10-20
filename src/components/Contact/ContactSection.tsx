@@ -19,14 +19,13 @@ export default function ContactSection({}: Props) {
     setOpen(true);
   };
 
-  const handleClose = () => {
+  const handleClose = React.useCallback(() => {
     setOpen(false);
-  };
-
-  const handleSubmit = () => {
+  }, []);
+  const handleSubmit = React.useCallback(() => {
     //   SEND API REQUEST
     setOpen(false);
-  };
+  }, []);
   return (
     <div>
       <Box
