@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box, CardActionArea, Stack, Link } from "@mui/material";
+import { Box, CardActionArea, Grid, Link } from "@mui/material";
 import data from "../../../public/data/blogsdata.json";
 import { format } from "date-fns";
 import Image from "next/image";
@@ -25,7 +25,7 @@ const CardSection = ({
   publishedAt: string;
 }) => {
   return (
-    <div key={title}>
+    <Grid item key={title}>
       <Card key={title} sx={{ maxWidth: 345, backgroundColor: "#FF6969" }}>
         <Link underline="none" href={url} target="_blank">
           <CardActionArea>
@@ -62,7 +62,7 @@ const CardSection = ({
                 >
                   Date: {format(new Date(publishedAt), "PP")}
                 </Typography>
-                <Stack direction="row">
+                <Grid direction="row">
                   <motion.div
                     initial={{ scale: 1 }}
                     whileHover={{
@@ -78,13 +78,13 @@ const CardSection = ({
                   </motion.div>
 
                   <Typography mt=".5rem">{claps}</Typography>
-                </Stack>
+                </Grid>
               </Box>
             </CardContent>
           </CardActionArea>
         </Link>
       </Card>
-    </div>
+    </Grid>
   );
 };
 export default function BlogSection(props: Props) {
@@ -100,7 +100,7 @@ export default function BlogSection(props: Props) {
       >
         PUBLICATIONS
       </Box>
-      <Stack>
+      <Grid container>
         {data.data.map((value) => {
           return (
             <CardSection
@@ -112,7 +112,7 @@ export default function BlogSection(props: Props) {
             />
           );
         })}
-      </Stack>
+      </Grid>
     </div>
   );
 }
