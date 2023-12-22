@@ -5,7 +5,9 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { motion } from "framer-motion";
 import Box from "@mui/material/Box";
-
+import Image from "next/image";
+import github from "../../../public/github-mark.png";
+import linkedln from "../../../public/linkedln logo.png";
 type Props = { toAbout: any };
 
 export default function AnimatedText({ toAbout }: Props) {
@@ -13,8 +15,7 @@ export default function AnimatedText({ toAbout }: Props) {
     <motion.div>
       <Stack
         sx={{
-          height: "95vh",
-          pl: "2rem",
+          height: "75vh",
         }}
         direction="column"
         justifyContent="center"
@@ -24,7 +25,7 @@ export default function AnimatedText({ toAbout }: Props) {
           component="h1"
           textAlign={"center"}
           color="lightsalmon"
-          fontSize={84}
+          fontSize="4rem"
         >
           RAGHAV RUDHRA
         </Typography>
@@ -44,6 +45,47 @@ export default function AnimatedText({ toAbout }: Props) {
           >
             About Me
           </Button>
+        </Box>
+      </Stack>
+      {/* Social Media Links */}
+      <Stack
+        component={motion.div}
+        sx={{ m: "1rem", transform: "translateY(-10rem)" }}
+        spacing={3}
+      >
+        <Box sx={{ backgroundColor: "lightsalmon", width: 72, height: 72 }}>
+          <Image
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginTop: "auto",
+            }}
+            src={github}
+            alt="github-logo"
+            width="64"
+            height="64"
+          ></Image>
+        </Box>
+        <Box
+          sx={{
+            backgroundColor: "lightsalmon",
+            width: 72,
+            height: 72,
+            alignItems: "center",
+          }}
+        >
+          <Image
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+            src={linkedln}
+            alt="linkedln-logo"
+            width="64"
+            height="64"
+          ></Image>
         </Box>
       </Stack>
     </motion.div>

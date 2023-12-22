@@ -8,7 +8,6 @@ import Image from "next/image";
 import curvedArrow from "../../../public/curved stroke.png";
 import { motion } from "framer-motion";
 import { Button, Link } from "@mui/material";
-import { GifBox } from "@mui/icons-material";
 type Props = {};
 
 export default function AboutSection({}: Props) {
@@ -44,7 +43,7 @@ export default function AboutSection({}: Props) {
         </Box>
         <Box
           component="h1"
-          fontSize={72}
+          fontSize="4rem"
           width={"100%"}
           textAlign={"center"}
           color="lightsalmon"
@@ -72,7 +71,7 @@ export default function AboutSection({}: Props) {
             >
               <Stack height="600px" justifyContent="center" alignItems="center">
                 <Typography
-                  fontSize="1.5rem"
+                  fontSize={{ sm: "1rem", md: "1.5rem" }}
                   fontFamily={"sans-serif"}
                   fontWeight="700"
                   width="80%"
@@ -88,6 +87,7 @@ export default function AboutSection({}: Props) {
                   architecture.
                 </Typography>
                 <Link
+                  mt="10px"
                   target="_blank"
                   href="https://raghav-portfolio-media.s3.amazonaws.com/Resume.pdf"
                   underline="none"
@@ -129,7 +129,7 @@ export default function AboutSection({}: Props) {
                   }}
                 >
                   <Typography
-                    fontSize="1.2rem"
+                    fontSize={{ sm: "0.8rem", md: "1.2rem" }}
                     color="#FFF8C9"
                     textAlign={"center"}
                   >
@@ -139,6 +139,7 @@ export default function AboutSection({}: Props) {
                   <Typography
                     fontSize="0.8rem"
                     color="#FFF8C9"
+                    fontWeight="200"
                     textAlign={"center"}
                   >
                     May 2022 - Aug 2023 · 1 yr 4 mos
@@ -157,7 +158,7 @@ export default function AboutSection({}: Props) {
                   }}
                 >
                   <Typography
-                    fontSize="1.2rem"
+                    fontSize={{ sm: "0.8rem", md: "1.2rem" }}
                     color="#FFF8C9"
                     textAlign={"center"}
                   >

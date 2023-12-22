@@ -53,7 +53,7 @@ export default function LayoutCards({}: Props) {
               <Typography
                 color="#FFF8C9"
                 height={120}
-                fontSize={72}
+                fontSize="2rem"
                 sx={{ display: "inline-block" }}
               >
                 Finalysis
@@ -79,7 +79,12 @@ export default function LayoutCards({}: Props) {
                 fill
               />
             </Box>
-            <Typography mt={-24} width="90%" ml="5%" fontSize={18}>
+            <Typography
+              mt={-24}
+              width="90%"
+              ml="5%"
+              fontSize={{ sm: "0.5rem", md: "1rem" }}
+            >
               Finalysis, a comprehensive platform designed to serve as your
               ultimate destination for in-depth analysis of stocks,
               cryptocurrencies, and a wide array of financial instruments.
@@ -109,7 +114,7 @@ export default function LayoutCards({}: Props) {
             <Typography
               color="#FFF8C9"
               height={120}
-              fontSize={64}
+              fontSize="2rem"
               sx={{ display: "inline-block" }}
             >
               Portfolio

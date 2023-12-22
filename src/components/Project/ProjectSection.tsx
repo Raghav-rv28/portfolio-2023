@@ -6,6 +6,7 @@ import Image from "next/image";
 import Grid from "@mui/material/Grid";
 import LayoutCards from "./LayoutCards";
 import { motion } from "framer-motion";
+import { Typography } from "@mui/material";
 type Props = {};
 
 export default function ProjectSection({}: Props) {
@@ -45,16 +46,15 @@ export default function ProjectSection({}: Props) {
         >
           <Image alt="stroke" src={stroke} width={320} height={180} />
         </Box>
-        <Box
+        <Typography
           component="h1"
-          fontSize={72}
           width={"100%"}
           textAlign={"center"}
           color="lightsalmon"
-          sx={{}}
+          sx={{ fontSize: { xs: "3rem", md: "4rem" } }}
         >
           PROJECTS
-        </Box>
+        </Typography>
         <Box>
           <LayoutCards />
         </Box>

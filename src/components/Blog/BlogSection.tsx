@@ -62,7 +62,7 @@ const CardSection = ({
                 >
                   Date: {format(new Date(publishedAt), "PP")}
                 </Typography>
-                <Grid direction="row">
+                <Grid container direction="row">
                   <motion.div
                     initial={{ scale: 1 }}
                     whileHover={{
@@ -92,7 +92,7 @@ export default function BlogSection(props: Props) {
     <div>
       <Box
         component="h1"
-        fontSize={72}
+        fontSize="2rem"
         width={"100%"}
         textAlign={"center"}
         color="lightsalmon"
@@ -100,7 +100,12 @@ export default function BlogSection(props: Props) {
       >
         PUBLICATIONS
       </Box>
-      <Grid container>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
         {data.data.map((value) => {
           return (
             <CardSection
