@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import LayoutCards from "./LayoutCards";
 import { motion } from "framer-motion";
 import { Typography } from "@mui/material";
+import AnimatedText from "../AnimatedText";
 type Props = {};
 
 export default function ProjectSection({}: Props) {
@@ -46,15 +47,7 @@ export default function ProjectSection({}: Props) {
         >
           <Image alt="stroke" src={stroke} width={320} height={180} />
         </Box>
-        <Typography
-          component="h1"
-          width={"100%"}
-          textAlign={"center"}
-          color="lightsalmon"
-          sx={{ fontSize: { xs: "3rem", md: "4rem" } }}
-        >
-          PROJECTS
-        </Typography>
+        <AnimatedText text="PROJECTS" fontSize={{ xs: "3rem", md: "4rem" }} />
         <Box>
           <LayoutCards />
         </Box>

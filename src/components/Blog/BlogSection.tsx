@@ -9,6 +9,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import clapping from "../../../public/clapping.png";
 import { motion } from "framer-motion";
+import AnimatedText from "../AnimatedText";
 type Props = {};
 
 const CardSection = ({
@@ -90,7 +91,8 @@ const CardSection = ({
 export default function BlogSection(props: Props) {
   return (
     <div>
-      <Box
+      <AnimatedText text="PUBLICATIONS" fontSize={{ xs: "3rem", md: "4rem" }} />
+      {/* <Box
         component="h1"
         fontSize="2rem"
         width={"100%"}
@@ -99,8 +101,9 @@ export default function BlogSection(props: Props) {
         sx={{}}
       >
         PUBLICATIONS
-      </Box>
+      </Box> */}
       <Grid
+        mt="2rem"
         container
         direction="row"
         justifyContent="center"
