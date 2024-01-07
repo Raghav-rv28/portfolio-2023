@@ -9,6 +9,7 @@ import curvedArrow from "../../../public/curved stroke.png";
 import { motion } from "framer-motion";
 import { Button, Link } from "@mui/material";
 import AnimatedText from "../AnimatedText";
+import { StaggeredText } from "../StaggeredText";
 type Props = { toProjects: any };
 
 export default function AboutSection({ toProjects }: Props) {
@@ -60,17 +61,16 @@ export default function AboutSection({ toProjects }: Props) {
               <Typography
                 fontSize={{ sm: "1rem", md: "1.5rem" }}
                 fontFamily={"sans-serif"}
-                fontWeight="700"
+                fontWeight="600"
                 width="80%"
                 color="#FFF8C9"
               >
-                Results-driven Full-Stack Software Engineer with a Bachelor of
-                Science in Computer Science from Lakehead University, 2+ years
-                of agile development experience, proficiency in React, Node,
-                Next, and various AWS services. Strong academic background with
-                a GPA of 3.7. Skilled in developing integrated applications,
-                responsive frontend components, and upgrading existing
-                applications to use serverless and Microservices architecture.
+                <StaggeredText
+                  text={[
+                    `Results-driven Full-Stack Software Engineer with a Bachelor of Science in Computer Science from Lakehead University, 2+ years of agile development experience, proficiency in React, Node, Next, and various AWS services. Strong academic background with a GPA of 3.7. Skilled in developing integrated applications,responsive frontend components, and upgrading existing applications to use serverless and Microservices architecture.`,
+                  ]}
+                  once
+                />
               </Typography>
               <Link
                 mt="10px"

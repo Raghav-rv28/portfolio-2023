@@ -40,7 +40,6 @@ const colors = [
 ];
 
 const AnimatedText = (props: Props) => {
-  console.log(props);
   return (
     <div>
       <Stack direction="row" justifyContent="center" alignContent="center">

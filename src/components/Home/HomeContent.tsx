@@ -10,6 +10,7 @@ import github from "../../../public/github-mark.png";
 import linkedln from "../../../public/linkedln logo.png";
 import Link from "next/link";
 import AnimatedText from "../AnimatedText";
+import { StaggeredText } from "../StaggeredText";
 type Props = { toAbout: any };
 
 const colors = [
@@ -63,16 +64,20 @@ export default function HomeContent({ toAbout }: Props) {
         >
           <AnimatedText
             text="RAGHAV RUDHRA"
-            fontSize={{ xs: "4rem", md: "5rem" }}
+            fontSize={{ xs: "2.5rem", md: "5rem" }}
           />
+
           <Typography
             color="lightsalmon"
             component="h5"
-            fontSize={24}
+            fontSize={{ xs: "1rem", md: "2rem" }}
             textAlign={"center"}
           >
-            Software Development Engineer with expertise in developing
-            Full-Stack & Cloud solutions.
+            <StaggeredText
+              text="Software Development Engineer with expertise in developing
+  Full-Stack & Cloud solutions."
+              once
+            />
           </Typography>
           <Box width="100%" justifyContent="center" display="flex">
             <motion.div
