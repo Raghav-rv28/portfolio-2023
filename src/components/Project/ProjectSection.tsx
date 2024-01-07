@@ -42,7 +42,7 @@ export default function ProjectSection({}: Props) {
             maxWidth: 320,
             position: "relative",
             top: -50,
-            left: temp / 2,
+            left: "50%",
           }}
         >
           <Image alt="stroke" src={stroke} width={320} height={180} />

@@ -77,6 +77,7 @@ export default function HomeContent({ toAbout }: Props) {
               text="Software Development Engineer with expertise in developing
   Full-Stack & Cloud solutions."
               once
+              eachAlphabet
             />
           </Typography>
           <Box width="100%" justifyContent="center" display="flex">

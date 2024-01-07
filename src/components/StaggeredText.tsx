@@ -1,11 +1,14 @@
+"use client";
 import { Box, Typography } from "@mui/material";
 import { Variant, motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { visuallyHidden } from "@mui/utils";
 
 type StaggeredTextProps = {
   text: string | string[];
   className?: string;
   once?: boolean;
+  eachAlphabet?: boolean;
   repeatDelay?: number;
   animation?: {
     hidden: Variant;
@@ -32,6 +35,7 @@ export const StaggeredText = ({
   once,
   repeatDelay,
   animation = defaultAnimations,
+  eachAlphabet = false,
 }: StaggeredTextProps) => {
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
@@ -70,24 +74,50 @@ export const StaggeredText = ({
       }}
       aria-hidden
     >
-      {textArray.map((line, lineIndex) => (
-        <Box sx={{ display: "block" }} key={`${line}-${lineIndex}`}>
-          {line.split(" ").map((word, wordIndex) => (
-            <Box sx={{ display: "inline-block" }} key={`${word}-${wordIndex}`}>
-              {word.split("").map((char, charIndex) => (
+      <Box sx={visuallyHidden}>
+        {Array.isArray(text) ? text.join(" ") : text}
+      </Box>
+      {textArray.map((line, lineIndex) =>
+        eachAlphabet ? (
+          <Box sx={{ display: "block" }} key={`${line}-${lineIndex}`}>
+            {line.split(" ").map((word, wordIndex) => (
+              <Box
+                sx={{ display: "inline-block" }}
+                key={`${word}-${wordIndex}`}
+              >
+                {word.split("").map((char, charIndex) => (
+                  <motion.span
+                    key={`${char}-${charIndex}`}
+                    className="inline-block"
+                    variants={animation}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+                <Box sx={{ display: "inline-block" }}>&nbsp;</Box>
+              </Box>
+            ))}
+          </Box>
+        ) : (
+          <Box sx={{ display: "block" }} key={`${line}-${lineIndex}`}>
+            {line.split(" ").map((word, wordIndex) => (
+              <Box
+                sx={{ display: "inline-block" }}
+                key={`${word}-${wordIndex}`}
+              >
                 <motion.span
-                  key={`${char}-${charIndex}`}
+                  key={`${word}-${wordIndex}`}
                   className="inline-block"
                   variants={animation}
                 >
-                  {char}
+                  {word}
                 </motion.span>
-              ))}
-              <Box sx={{ display: "inline-block" }}>&nbsp;</Box>
-            </Box>
-          ))}
-        </Box>
-      ))}
+                <Box sx={{ display: "inline-block" }}>&nbsp;</Box>
+              </Box>
+            ))}
+          </Box>
+        )
+      )}
     </motion.span>
   );
 };
